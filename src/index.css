@@ -103,3 +103,39 @@ code {
 .dancing {
   font-family: "Dancing Script", cursive;
 }
+
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 36px;
+  /* background-color: white; */
+  /* border-radius: 45px; */
+}
+
+
+th{
+  padding: 24px;
+  text-align: center;
+}
+
+tr{
+  margin-top: 10px;
+}
+
+td{ text-align: center;
+  padding: 8px;
+  font-weight: 500;
+  font-size: medium;
+  /* background-color: #e8f3ff; */
+}
+
+
+.autorow{
+ 
+   
+    grid-auto-rows: minmax(90px, auto);
+
+}
+
+

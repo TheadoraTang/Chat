@@ -10,23 +10,35 @@ import {
 
 const items = [
   {
-    label: "主页",
+    label: (
+      <a href="/"  >
+        主页
+      </a>
+    ),
     key: "home",
     icon: <HomeOutlined />,
   },
   {
-    label: "社区",
+    label: (
+      <a href="/community"  >
+        社区
+      </a>
+    ),
     key: "community",
     icon: <CommentOutlined />,
   },
   {
-    label: "好友",
+    label: (
+      <a href="/friends"  >
+       好友
+      </a>
+    ),
     key: "friends",
     icon: <SettingOutlined />,
   },
   {
     label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+      <a href="/" >
         个人主页
       </a>
     ),
