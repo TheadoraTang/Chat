@@ -91,9 +91,14 @@ const Attendance = () => {
 
       <div className="flex flex-col">
         <div className="mt-16 flex justify-center ">
-          <button onClick={handleLastMonthClick}>&lt;</button>
-          <a className="text-center font-bold text-3xl">{month}</a>
-          <button onClick={handleNextMonthClick}>&gt;</button>
+          <button onClick={handleLastMonthClick}>
+          <div className="button-left"></div>
+          
+          </button>
+          <a className="text-center font-bold text-3xl px-4">{month}</a>
+          <button onClick={handleNextMonthClick}>
+          <div className="button-right"></div>
+          </button>
         </div>
 
         <div className="flex justify-center mt-6">

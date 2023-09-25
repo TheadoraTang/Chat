@@ -51,7 +51,7 @@ const Header = () => {
   const onSearch = (value, _e, info) => console.log(info?.source, value);
   const { Search } = Input;
   return (
-    <div className="h-[8%] w-[100%%] bg-black flex font-medium">
+    <div className="h-16 w-[100%%] bg-black flex font-medium">
       <img src={logo} className="h-16 w-auto ml-2 mr-4"></img>
       <div className="flex flex-1 items-center text-white">
         {items.map((item, index) => {

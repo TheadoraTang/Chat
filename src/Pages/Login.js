@@ -30,34 +30,26 @@ const Login = () => {
     {
       name: "柴狗小世界",
       it: [
-        [
-          { name:<Link to="/friends">好友交互</Link>, img: think },
-          { name: <Link to="/community">社区</Link>, img: com },
-        ],
+        { name: <Link to="/friends">好友交互</Link>, img: think },
+        { name: <Link to="/community">社区</Link>, img: com },
       ],
     },
     {
       name: "柴狗口语训练",
       it: [
-        [
-          { name: <Link to="/AI">AI 对话</Link>, img: AI },
-          { name: <Link to="/match">真人匹配</Link>, img: chat },
-        ],
+        { name: <Link to="/AI">AI 对话</Link>, img: AI },
+        { name: <Link to="/match">真人匹配</Link>, img: chat },
       ],
     },
     {
       name: " 柴狗小功能",
       it: [
-        [
-          { name: <Link to="/attendance">每日签到</Link>, img: cal },
-          { name: <Link to="/words">佳句赏析</Link>, img: watch },
-          { name: <Link to="/test">单词记忆</Link>, img: text },
-        ],
-        [
-          { name: <Link to="/news">新闻阅读</Link>, img: news },
-          { name: <Link to="/listen">听力音频</Link>, img: question },
-          { name:  <Link to="/analysis">学情分析</Link>, img: find },
-        ],
+        { name: <Link to="/attendance">每日签到</Link>, img: cal },
+        { name: <Link to="/words">佳句赏析</Link>, img: watch },
+        { name: <Link to="/test">单词记忆</Link>, img: text },
+        { name: <Link to="/news">新闻阅读</Link>, img: news },
+        { name: <Link to="/listen">听力音频</Link>, img: question },
+        { name: <Link to="/analysis">学情分析</Link>, img: find },
       ],
     },
   ];
@@ -163,20 +155,16 @@ const Login = () => {
           <div className="mb-20">
             <p className="text-center text-3xl text-gray-500">{ite.name}</p>
             <div className="w-[80%] m-auto mt-10">
-              {ite.it.map((item, index) => {
-                return (
-                  <div className="flex flex-row mb-10 ">
-                    {item.map((i, index) => {
-                      return (
-                        <div className="basis-1/3 mx-4 border-2 flex flex-row items-center ">
-                          <img src={i.img}></img>
-                          <p className="ml-10 font-bold">{i.name}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+              <div className="grid grid-cols-3 gap-y-6 ">
+                {ite.it.map((item, index) => {
+                  return (
+                    <div className="mx-4 border-2 flex flex-row items-center ">
+                      <img src={item.img}></img>
+                      <p className="ml-10 font-bold">{item.name}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         );

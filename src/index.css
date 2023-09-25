@@ -132,10 +132,26 @@ td{ text-align: center;
 
 
 .autorow{
- 
-   
     grid-auto-rows: minmax(90px, auto);
 
+}
+
+.button-right{
+    border: 5px solid #d3d7d4;
+    width: 20px;
+    height: 20px;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+
+.button-left{
+    border: 5px solid #d3d7d4;
+    width: 20px;
+    height: 20px;
+    border-top: none;
+    border-right: none;
+    transform: rotate(45deg);
 }
 
 
