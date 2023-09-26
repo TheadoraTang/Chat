@@ -1,9 +1,8 @@
 import flower from "../assets/give_flowers.png";
 import React from "react";
-import Header from "../Components/Header";
 import { useState, useEffect } from "react";
 import claw from "../assets/claw.png";
-import { Button, message } from 'antd';
+import {  message } from "antd";
 
 const Attendance = () => {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -15,13 +14,15 @@ const Attendance = () => {
     setMonth(new Date().getMonth() + 1);
   }, []);
 
-
   const handleDateClick = (date) => {
     const currentDate = new Date().getDate();
     const dateKey = `${month}-${currentDate}`;
     if (date === dateKey) {
-      localStorage.setItem("checkedDates", JSON.stringify([...checkedDates, date]));
-      messageApi.info('签到成功!');
+      localStorage.setItem(
+        "checkedDates",
+        JSON.stringify([...checkedDates, date])
+      );
+      messageApi.info("签到成功!");
     }
   };
 
@@ -50,10 +51,10 @@ const Attendance = () => {
 
     for (let i = 1; i <= daysInMonth; i++) {
       const savedDates = JSON.parse(localStorage.getItem("checkedDates"));
-      console.log(savedDates)
-      console.log(`${month}-${i}`)
+      console.log(savedDates);
+      console.log(`${month}-${i}`);
       const isChecked = savedDates.includes(`${month}-${i}`);
-      
+
       tempRow.push(
         <td
           key={i}
@@ -84,20 +85,17 @@ const Attendance = () => {
   };
 
   return (
-    
-    <div className="h-[100%] bg-[#fff7e4]">
-      <Header />
+    <>
       <>{contextHolder}</>
 
       <div className="flex flex-col">
         <div className="mt-16 flex justify-center ">
           <button onClick={handleLastMonthClick}>
-          <div className="button-left"></div>
-          
+            <div className="button-left"></div>
           </button>
           <a className="text-center font-bold text-3xl px-4">{month}</a>
           <button onClick={handleNextMonthClick}>
-          <div className="button-right"></div>
+            <div className="button-right"></div>
           </button>
         </div>
 
@@ -121,10 +119,8 @@ const Attendance = () => {
         <div className="absolute bottom-0 left-4">
           <img src={flower} className="h-44 w-auto"></img>
         </div>
-      
-      
       </div>
-    </div>
+    </>
   );
 };
 

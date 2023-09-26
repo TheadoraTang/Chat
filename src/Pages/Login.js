@@ -17,6 +17,7 @@ import cal from "../assets/cal.png";
 import com from "../assets/com.png";
 import find from "../assets/find.png";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const onFinish = (values) => {
@@ -30,7 +31,14 @@ const Login = () => {
     {
       name: "柴狗小世界",
       it: [
-        { name: <Link to="/friends">好友交互</Link>, img: think },
+        {
+          name: (
+            <Link to="/friends" state={{ fromDashboard: true }}>
+              好友交互
+            </Link>
+          ),
+          img: think,
+        },
         { name: <Link to="/community">社区</Link>, img: com },
       ],
     },
@@ -44,7 +52,10 @@ const Login = () => {
     {
       name: " 柴狗小功能",
       it: [
-        { name: <Link to="/attendance">每日签到</Link>, img: cal },
+        {
+          name: <Link to="/attendance">每日签到</Link>,
+          img: cal,
+        },
         { name: <Link to="/words">佳句赏析</Link>, img: watch },
         { name: <Link to="/test">单词记忆</Link>, img: text },
         { name: <Link to="/news">新闻阅读</Link>, img: news },
@@ -61,24 +72,23 @@ const Login = () => {
     { name: "记录你的英语口语学习历程", img: introduceContainer4 },
   ];
 
-  return (
-    <div className="h-[100%]">
-      <div className="h-[100%] bg-image">
-        <Header />
+  let location = useLocation();
+  console.log(location);
 
-        <div className="flex flex-1 flex-row items-center  h-[92%] ">
-          <div className="basis-1/2 justify-center flex text-2xl flex-col">
-            <div className="flex justify-center mb-12 text-5xl">
-              专业的英语口语对话平台
-            </div>
-            <div className="flex justify-center mb-6 dancing font-bold text-3xl">
+  return (
+    <>
+      <div className="h-screen bg-image flex flex-col">
+        <Header />
+        <div className="flex flex-1 flex-row items-center ">
+          <div className="basis-1/2 justify-center items-center flex text-2xl flex-col">
+            <div className="text-5xl">专业的英语口语对话平台</div>
+            <div className="mt-6 dancing font-bold text-3xl">
               向哑巴英语 say goodbye!
             </div>
-            <div className="flex justify-center">
-              <button className="bg-[#FFC125] rounded-md py-2 px-4 text-lg text-white font-bold">
-                开始口语学习之旅
-              </button>
-            </div>
+
+            <button className="bg-[#FFC125] rounded-md py-2 mt-6 px-4 text-lg text-white font-bold">
+              开始口语学习之旅
+            </button>
           </div>
           <div className="basis-1/2 justify-center flex">
             <Form
@@ -171,7 +181,7 @@ const Login = () => {
       })}
 
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import Header from "../Components/Header";
 import word_dog from "../assets/word_dog.png";
 import test_dog from "../assets/test_dog.png";
 import words from "../assets/words.png";
@@ -79,9 +78,8 @@ const Test = () => {
   ];
 
   return (
-    <div className="h-[100%] bg-[#fff7e4]">
-      <Header />
-      <img src={words} className="h-44 m-auto"></img>
+    <>
+      <img src={words} className="h-44 mx-auto"></img>
       <div className="flex justify-center items-center mt-6">
         <div className="flex flex-row w-[60%] m-auto text-2xl font-bold border-4">
           <div className="flex flex-col basis-1/2 items-center border-4">
@@ -125,7 +123,7 @@ const Test = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
